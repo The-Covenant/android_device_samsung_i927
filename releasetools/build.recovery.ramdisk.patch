@@ -1,0 +1,13 @@
+--- a/build/core/Makefile	2012-10-22 11:01:13.204635824 +0200
++++ b/build/core/Makefile	2012-10-22 10:58:50.308631884 +0200
+@@ -717,6 +717,10 @@
+ 	cp -f $(recovery_initrc) $(TARGET_RECOVERY_ROOT_OUT)/init.rc
+ 	cp -f $(recovery_binary) $(TARGET_RECOVERY_ROOT_OUT)/sbin/
+ 	rm -f $(TARGET_RECOVERY_ROOT_OUT)/init.*.rc
++ifneq ($(BOARD_RECOVERY_RAMDISK_EXTRA_SCRIPT),)
++	@echo extra recovery ramdisk step...
++	$(BOARD_RECOVERY_RAMDISK_EXTRA_SCRIPT)
++endif
+ 	mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/system/bin
+ 	cp -rf $(recovery_resources_common) $(TARGET_RECOVERY_ROOT_OUT)/
+ 	$(foreach item,$(recovery_resources_private), \
