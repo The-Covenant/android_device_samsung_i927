@@ -34,7 +34,7 @@ PRODUCT_PACKAGES += \
     sec_touchscreen.kcm \
     dexpreopt \
     com.android.future.usb.accessory \
-    boseSettings \
+    GlideSettings \
     SamsungServiceMode \
     Torch \
     FM \
