@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_glide.mk
+    $(LOCAL_DIR)/full_bose.mk

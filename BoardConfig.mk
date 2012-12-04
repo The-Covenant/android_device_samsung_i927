@@ -15,7 +15,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # inherit from the proprietary version
--include vendor/samsung/glide/BoardConfigVendor.mk
+-include vendor/samsung/bose/BoardConfigVendor.mk
 
 # CPU
 TARGET_CPU_ABI := armeabi-v7a
@@ -54,7 +54,7 @@ BOARD_KERNEL_CMDLINE := mem=511M@0M secmem=1M@511M mem=512M@512M vmalloc=256M fo
 #KERNEL_MODULES_DIR := "/lib/modules"
 
 # required to remove kernel modules, recovery size is limited to 5MB
-BOARD_RECOVERY_RAMDISK_EXTRA_SCRIPT := device/samsung/glide/releasetools/recovery_ramdisk.sh
+BOARD_RECOVERY_RAMDISK_EXTRA_SCRIPT := device/samsung/bose/releasetools/recovery_ramdisk.sh
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 8388608
@@ -67,7 +67,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-TARGET_PREBUILT_KERNEL := device/samsung/glide/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/bose/prebuilt/kernel
 
 TARGET_NO_KERNEL := false
 TARGET_NO_RECOVERY := false
@@ -88,7 +88,7 @@ TARGET_PROVIDES_LIBAUDIO := false
 BOARD_SECOND_CAMERA_DEVICE := true
 
 # Graphics
-BOARD_EGL_CFG := device/samsung/glide/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/bose/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Enable WEBGL in WebKit
@@ -148,15 +148,15 @@ BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 # LPM
 BOARD_CHARGING_MODE_BOOTING_LPM := "/sys/class/power_supply/battery/batt_lp_charging"
 BOARD_BATTERY_DEVICE_NAME := "battery"
-BOARD_CHARGER_RES := device/samsung/glide/res/charger
+BOARD_CHARGER_RES := device/samsung/bose/res/charger
 
 # EMMC brickbug is removed in the kernel, but be better safe than sorry.
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # Recovery
-TARGET_RECOVERY_INITRC := device/samsung/glide/recovery.rc
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/glide/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/glide/recovery/graphics.c
+TARGET_RECOVERY_INITRC := device/samsung/bose/recovery.rc
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/bose/recovery/recovery_keys.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/bose/recovery/graphics.c
 
 BOARD_UMS_LUNFILE := "/sys/devices/platform/fsl-tegra-udc/gadget/lun%d/file"
 BOARD_USES_MMCUTILS := true

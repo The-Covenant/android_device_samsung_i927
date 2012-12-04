@@ -24,14 +24,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, device/samsung/glide/glide.mk)
+$(call inherit-product, device/samsung/bose/bose.mk)
 
 # Galaxy R uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_glide
-PRODUCT_DEVICE := glide
+PRODUCT_NAME := full_bose
+PRODUCT_DEVICE := bose
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SGH-I927
