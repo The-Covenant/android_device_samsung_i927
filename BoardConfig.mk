@@ -123,11 +123,11 @@ WIFI_BAND                       := 802_11_ABG
 BOARD_LEGACY_NL80211_STA_EVENTS := true
 
 # Releasetools
-#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/galaxyr/releasetools/galaxyr_ota_from_target_files
-#TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/samsung/galaxyr/releasetools/galaxyr_img_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/galaxyr/releasetools/galaxyr_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/samsung/galaxyr/releasetools/galaxyr_img_from_target_files
 
 # Custom squisher, final step script
-#TARGET_CUSTOM_RELEASETOOL := device/samsung/galaxyr/releasetools/squisher
+TARGET_CUSTOM_RELEASETOOL := device/samsung/galaxyr/releasetools/squisher
 
 # Use our init.rc
 TARGET_PROVIDES_INIT_RC := true
