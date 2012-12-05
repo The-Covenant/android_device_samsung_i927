@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_bose.mk
+    $(LOCAL_DIR)/full_i927.mk

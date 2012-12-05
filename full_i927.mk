@@ -24,17 +24,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, device/samsung/bose/bose.mk)
+$(call inherit-product, device/samsung/i927/i927.mk)
 
-# Galaxy R uses high-density artwork where available
+# SGH-I927 uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_bose
-PRODUCT_DEVICE := bose
+PRODUCT_NAME := full_i927
+PRODUCT_DEVICE := i927
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SGH-I927
 
-#Set build fingerprint / ID / Prduct Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGH-I927 TARGET_DEVICE=SGH-I927 BUILD_FINGERPRINT=samsung/SGH-I927/SGH-I927:4.0.4/IMM76D/UCLG9/Dman3285-test-keys PRIVATE_BUILD_DESC="SGH-I927-eng 4.0.4 IMM76D UCLG9 Dman3285-test-keys"

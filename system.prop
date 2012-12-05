@@ -40,12 +40,11 @@ wifi.interface=wlan0
 
 # Wifi ap interface
 wifi.ap.interface=wlan0
-wifi.p2pinterface=wlan0
 softap.interface=wlan0
 ro.wifi-ap.fw-path=/etc/wifi/bcm4330_apsta.bin
 
 # To fix the tethering, eth0 should not be listed here
-mobiledata.interfaces=rmnet0,rmnet1,rmnet2
+mobiledata.interfaces=rmnet0
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
