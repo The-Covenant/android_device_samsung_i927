@@ -9,7 +9,6 @@ PRODUCT_PACKAGES += \
     libOmxVidEnc \
     sec_touchscreen.kcm \
     dexpreopt \
-    com.android.future.usb.accessory \
     SamsungServiceMode \
     Camera \
     librs_jni
