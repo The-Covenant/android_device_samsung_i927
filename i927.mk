@@ -4,6 +4,8 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 
+LOCAL_PATH := device/samsung/i927
+
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVidEnc \
@@ -36,102 +38,99 @@ PRODUCT_PACKAGES += \
     audio_policy.n1 \
     audio.a2dp.default
 
-# Set true if you want .odex files
-DISABLE_DEXPREOPT := false
-
 # INIT-scripts
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/lpm.rc:root/lpm.rc \
-    device/samsung/i927/init.n1.rc:root/init.n1.rc \
-    device/samsung/i927/init.n1.usb.rc:root/init.n1.usb.rc \
-    device/samsung/i927/ueventd.n1.rc:root/ueventd.n1.rc
+    $(LOCAL_PATH)/lpm.rc:root/lpm.rc \
+    $(LOCAL_PATH)/init.n1.rc:root/init.n1.rc \
+    $(LOCAL_PATH)/init.n1.usb.rc:root/init.n1.usb.rc \
+    $(LOCAL_PATH)/ueventd.n1.rc:root/ueventd.n1.rc
 
 # Prebuilt modules
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
-    device/samsung/i927/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
-    device/samsung/i927/prebuilt/Si4709_driver.ko:root/lib/modules/Si4709_driver.ko \
-    device/samsung/i927/prebuilt/modules.dep:root/lib/modules/modules.dep \
-    device/samsung/i927/prebuilt/cbd:root/sbin/cbd
+    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
+    $(LOCAL_PATH)/prebuilt/Si4709_driver.ko:root/lib/modules/Si4709_driver.ko \
+    $(LOCAL_PATH)/prebuilt/modules.dep:root/lib/modules/modules.dep \
+    $(LOCAL_PATH)/prebuilt/cbd:root/sbin/cbd
 
 # Vold and Storage
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/vold.fstab:system/etc/vold.fstab
+    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
 
 # Wifi, BT
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/gps.conf:system/etc/gps.conf \
-    device/samsung/i927/configs/sirfgps.conf:system/etc/sirfgps.conf
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
 
 # Media
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/i927/configs/media_codecs.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # OMX
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/somxreg.conf:system/etc/somxreg.conf
+    $(LOCAL_PATH)/configs/somxreg.conf:system/etc/somxreg.conf
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/nvcamera.conf:system/etc/nvcamera.conf
+    $(LOCAL_PATH)/configs/nvcamera.conf:system/etc/nvcamera.conf
 
 # Shell and busybox
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/configs/bashrc:system/etc/bash/bashrc \
-    device/samsung/i927/configs/mkshrc:system/etc/mkshrc \
-    device/samsung/i927/configs/busybox.fstab:system/etc/fstab
+    $(LOCAL_PATH)/configs/bashrc:system/etc/bash/bashrc \
+    $(LOCAL_PATH)/configs/mkshrc:system/etc/mkshrc \
+    $(LOCAL_PATH)/configs/busybox.fstab:system/etc/fstab
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/samsung/i927/usr/keylayout/Bluetooth_00_06_66_42.kl:system/usr/keylayout/Bluetooth_00_06_66_42.kl \
-    device/samsung/i927/usr/keylayout/STMPE_keypad.kl:system/usr/keylayout/STMPE_keypad.kl \
-    device/samsung/i927/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/samsung/i927/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-    device/samsung/i927/usr/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-    device/samsung/i927/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-    device/samsung/i927/usr/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
-    device/samsung/i927/usr/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
-    device/samsung/i927/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-    device/samsung/i927/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
-    device/samsung/i927/usr/keylayout/Vendor_044f_Product_d007.kl:system/usr/keylayout/Vendor_044f_Product_d007.kl \
-    device/samsung/i927/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    device/samsung/i927/usr/keylayout/Vendor_045e_Product_0719.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c21d.kl:system/usr/keylayout/Vendor_046d_Product_c21d.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c21f.kl:system/usr/keylayout/Vendor_046d_Product_c21f.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-    device/samsung/i927/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-    device/samsung/i927/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
-    device/samsung/i927/usr/keylayout/Vendor_057e_Product_0306.kl:system/usr/keylayout/Vendor_057e_Product_0306.kl \
-    device/samsung/i927/usr/keylayout/Vendor_2378_Product_100a.kl:system/usr/keylayout/Vendor_2378_Product_100a.kl \
+    $(LOCAL_PATH)/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    $(LOCAL_PATH)/usr/keylayout/Bluetooth_00_06_66_42.kl:system/usr/keylayout/Bluetooth_00_06_66_42.kl \
+    $(LOCAL_PATH)/usr/keylayout/STMPE_keypad.kl:system/usr/keylayout/STMPE_keypad.kl \
+    $(LOCAL_PATH)/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    $(LOCAL_PATH)/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+    $(LOCAL_PATH)/usr/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
+    $(LOCAL_PATH)/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
+    $(LOCAL_PATH)/usr/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_044f_Product_d007.kl:system/usr/keylayout/Vendor_044f_Product_d007.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_045e_Product_0719.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c21d.kl:system/usr/keylayout/Vendor_046d_Product_c21d.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c21f.kl:system/usr/keylayout/Vendor_046d_Product_c21f.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_057e_Product_0306.kl:system/usr/keylayout/Vendor_057e_Product_0306.kl \
+    $(LOCAL_PATH)/usr/keylayout/Vendor_2378_Product_100a.kl:system/usr/keylayout/Vendor_2378_Product_100a.kl \
 
 # Keychars
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-    device/samsung/i927/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    device/samsung/i927/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    device/samsung/i927/usr/keychars/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
-    device/samsung/i927/usr/keychars/sec_key.kcm:system/usr/keychars/sec_key.kcm \
-    device/samsung/i927/usr/keychars/STMPE_keypad.kcm:system/usr/keychars/STMPE_keypad.kcm \
-    device/samsung/i927/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm \
-    device/samsung/i927/usr/keychars/sec_touchkey.kcm:system/usr/keychars/sec_touchkey.kcm
+    $(LOCAL_PATH)/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
+    $(LOCAL_PATH)/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
+    $(LOCAL_PATH)/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
+    $(LOCAL_PATH)/usr/keychars/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
+    $(LOCAL_PATH)/usr/keychars/sec_key.kcm:system/usr/keychars/sec_key.kcm \
+    $(LOCAL_PATH)/usr/keychars/STMPE_keypad.kcm:system/usr/keychars/STMPE_keypad.kcm \
+    $(LOCAL_PATH)/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm \
+    $(LOCAL_PATH)/usr/keychars/sec_touchkey.kcm:system/usr/keychars/sec_touchkey.kcm
 
 # IDC files
 PRODUCT_COPY_FILES += \
-    device/samsung/i927/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
-    device/samsung/i927/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/samsung/i927/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
+    $(LOCAL_PATH)/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
+    $(LOCAL_PATH)/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+    $(LOCAL_PATH)/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
@@ -166,7 +165,7 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Overlay to set device specific parameters
-DEVICE_PACKAGE_OVERLAYS := device/samsung/i927/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
@@ -232,4 +231,4 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 # of the aspects that require proprietary drivers that aren't
 # commonly available
 
-$(call inherit-product-if-exists, vendor/samsung/i927/i927-vendor-blobs.mk)
+$(call inherit-product-if-exists, vendor/samsung/i927/i927-vendor.mk)

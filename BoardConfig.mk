@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
-
-# inherit from the proprietary version
--include vendor/samsung/i927/BoardConfigVendor.mk
-
 # CPU
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -134,3 +129,6 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/i927/recovery/graphics.c
 BOARD_UMS_LUNFILE := "/sys/devices/platform/fsl-tegra-udc/gadget/lun%d/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# inherit from the proprietary version
+-include vendor/samsung/i927/BoardConfigVendor.mk
