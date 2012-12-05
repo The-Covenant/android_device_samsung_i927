@@ -52,7 +52,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-TARGET_KERNEL_SOURCE := kernel/samsung/i927
+TARGET_KERNEL_SOURCE := kernel/samsung/n1
 TARGET_KERNEL_CONFIG := tegra_bose_defconfig
 
 TARGET_NO_KERNEL := false

@@ -1,7 +1,7 @@
 [
     {
-        "repository": "android_kernel_samsung_i927",
-        "target_path": "kernel/samsung/i927"
+        "repository": "android_kernel_samsung_n1",
+        "target_path": "kernel/samsung/n1"
     },
     {
         "repository": "android_packages_apps_SamsungServiceMode",
