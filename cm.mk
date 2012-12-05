@@ -24,7 +24,7 @@ PRODUCT_RELEASE_NAME := SGR
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/bose/full_bose.mk)
+$(call inherit-product, device/samsung/i927/full_i927.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i927

@@ -54,13 +54,7 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/egl/
 ./adb pull /system/etc/wifi/bcm4330_sta.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/etc/wifi/nvram_mfg.txt ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/etc/wifi/nvram_net.txt ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/bin/wlandutservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/bin/macloader ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/bin/mfgloader ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/bin/nv_hciattach ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/wlandutservice
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/macloader
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/mfgloader
 chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/nv_hciattach
 
 # NVIDIA
@@ -133,8 +127,6 @@ chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/nv_hciattach
 ./adb pull /system/lib/libsavsff.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/lib/libsavsmeta.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/lib/libsavsvc.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/lib/libsAMRNB.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/lib/libsAMRWB.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/lib/libsthmb.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 
 ./adb pull /system/lib/libstagefrighthw.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
@@ -154,13 +146,7 @@ chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/brcm_patchram_plus
 chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bintvoutservice
 
 # Other files
-./adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/bin/drexe ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-./adb pull /system/bin/npsmobex ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
 ./adb pull /system/bin/nvcpud ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/immvibed
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/drexe
-chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/npsmobex
 chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/nvcpud
 
 # fi
@@ -225,9 +211,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/bcm4330_sta.bin:system/etc/wifi/bcm4330_sta.bin \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nvram_net.txt:system/etc/wifi/nvram_net.txt \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/wlandutservice:system/bin/wlandutservice \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/macloader:system/bin/macloader \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/mfgloader:system/bin/mfgloader \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nv_hciattach:system/bin/nv_hciattach
 
 # NVIDIA
@@ -319,8 +302,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsavsff.so:system/lib/libsavsff.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsavsmeta.so:system/lib/libsavsmeta.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsavsvc.so:system/lib/libsavsvc.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsAMRNB.so:system/lib/libsAMRNB.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsAMRWB.so:system/lib/libsAMRWB.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsthmb.so:system/lib/libsthmb.so
 
 PRODUCT_COPY_FILES += \\
@@ -344,9 +325,6 @@ PRODUCT_COPY_FILES += \\
 
 # Other files
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/immvibed:system/bin/immvibed \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/drexe:system/bin/drexe \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/npsmobex:system/bin/npsmobex \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nvcpud:system/bin/nvcpud
 
 EOF
