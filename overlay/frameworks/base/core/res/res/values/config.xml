@@ -336,8 +336,8 @@
     <bool name="config_swipeDisambiguation">true</bool>
 
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not
-         specified -->
-    <string name="default_wallpaper_component">@null</string>
+specified -->
+    <string name="default_wallpaper_component">com.android.phasebeam/.PhaseBeamWallpaper</string>
 
     <!-- Boolean indicating if current platform supports bluetooth SCO for off call
     use cases -->
@@ -395,5 +395,18 @@
 	 For example, a device with Home, Back and Menu keys would set this
 	 config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
+
+    <!-- True will enable the electron beam screen-off animation. -->
+    <bool name="config_screenOffAnimation">true</bool>
+
+    <!-- The number of degrees to rotate the display when the keyboard is open.
+         A value of -1 means no change in orientation by default. -->
+    <integer name="config_lidOpenRotation">90</integer>
+
+    <!-- Indicate whether the lid state impacts the accessibility of
+         the physical keyboard.  0 means it doesn't, 1 means it is accessible
+         when the lid is open, 2 means it is accessible when the lid is
+         closed.  The default is 0. -->
+    <integer name="config_lidKeyboardAccessibility">1</integer>
 
 </resources>
