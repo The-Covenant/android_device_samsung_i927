@@ -46,8 +46,8 @@ static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 
 char const*const PANEL_FILE = "/sys/class/backlight/pwm-backlight/brightness";
-char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness"; // For Galaxy R
-//char const*const BUTTON_FILE = "/sys/class/misc/melfas_touchkey/brightness"; // For Captivate Glide
+//char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness"; // For Galaxy R
+char const*const BUTTON_FILE = "/sys/class/misc/melfas_touchkey/brightness"; // For Captivate Glide
 char const*const NOTIFICATION_FILE_BLN = "/sys/class/misc/backlightnotification/notification_led";
 
 void init_g_lock(void)
