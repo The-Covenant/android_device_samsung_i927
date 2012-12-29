@@ -48,6 +48,7 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 char const*const PANEL_FILE = "/sys/class/backlight/pwm-backlight/brightness";
 //char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness"; // For Galaxy R
 char const*const BUTTON_FILE = "/sys/class/misc/melfas_touchkey/brightness"; // For Captivate Glide
+char const*const KEYBOARD_FILE = "/sys/class/sec/sec_stmpe_bl/backlight";
 char const*const NOTIFICATION_FILE_BLN = "/sys/class/misc/backlightnotification/notification_led";
 
 void init_g_lock(void)
@@ -76,6 +77,11 @@ static int write_int(char const *path, int value)
         }
         return -errno;
     }
+}
+
+static int is_lit(struct light_state_t const* state)
+{
+    return state->color & 0x00ffffff;
 }
 
 static int rgb_to_brightness(struct light_state_t const *state)
@@ -114,6 +120,20 @@ static int set_light_buttons(struct light_device_t *dev,
     err = write_int(BUTTON_FILE, brightness);
     pthread_mutex_unlock(&g_lock);
 
+    return err;
+}
+
+static int set_light_keyboard(struct light_device_t* dev,
+        struct light_state_t const* state)
+{
+    int err = 0;
+    int on = is_lit (state);
+ 
+    pthread_mutex_lock(&g_lock);
+    ALOGV("%s(%d)", __FUNCTION__, on);
+    err = write_int(KEYBOARD_FILE, on ? 1 : 0);
+    pthread_mutex_unlock(&g_lock);
+ 
     return err;
 }
 
@@ -177,6 +197,8 @@ static int open_lights(const struct hw_module_t *module, char const *name,
         set_light = set_light_leds_attention;
     else if (0 == strcmp(LIGHT_ID_BATTERY, name))
         set_light = set_light_battery;
+    else if (0 == strcmp(LIGHT_ID_KEYBOARD, name))
+        set_light = set_light_keyboard;
     else
         return -EINVAL;
 
