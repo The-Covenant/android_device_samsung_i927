@@ -49,7 +49,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 #TARGET_PREBUILT_KERNEL := device/samsung/i927/prebuilt/kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/i927
-TARGET_KERNEL_CONFIG := covenant_bose_defconfig
+TARGET_KERNEL_CONFIG := tegra_bose_defconfig
 
 TARGET_NO_KERNEL := false
 TARGET_NO_RECOVERY := false
