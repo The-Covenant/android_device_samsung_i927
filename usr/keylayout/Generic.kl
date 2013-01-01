@@ -121,7 +121,7 @@ key 98    NUMPAD_DIVIDE
 key 99    SYSRQ
 key 100   ALT_RIGHT
 # key 101 "KEY_LINEFEED"
-key 102   HOME
+key 102   MOVE_HOME
 key 103   DPAD_UP
 key 104   PAGE_UP
 key 105   DPAD_LEFT
@@ -130,7 +130,7 @@ key 107   MOVE_END
 key 108   DPAD_DOWN
 key 109   PAGE_DOWN
 key 110   INSERT
-key 111   DEL
+key 111   FORWARD_DEL
 # key 112 "KEY_MACRO"
 key 113   VOLUME_MUTE
 key 114   VOLUME_DOWN
@@ -144,8 +144,8 @@ key 121   NUMPAD_COMMA
 key 122   KANA
 key 123   EISU
 key 124   YEN
-key 125   SYM
-key 126   SEARCH
+key 125   META_LEFT
+key 126   META_RIGHT
 key 127   MENU              WAKE_DROPPED
 key 128   MEDIA_STOP
 # key 129 "KEY_AGAIN"
@@ -233,7 +233,7 @@ key 208   MEDIA_FAST_FORWARD
 # key 211 "KEY_HP"
 key 212   CAMERA
 key 213   MUSIC
-key 214   APOSTROPHE
+# key 214 "KEY_QUESTION"
 key 215   ENVELOPE
 # key 216 "KEY_CHAT"
 key 217   SEARCH
@@ -299,7 +299,7 @@ key 317   BUTTON_THUMBL
 key 318   BUTTON_THUMBR
 
 
-key 352   ENTER
+# key 352 "KEY_OK"
 key 353   DPAD_CENTER
 # key 354 "KEY_GOTO"
 # key 355 "KEY_CLEAR"
@@ -372,7 +372,7 @@ key 429   CONTACTS
 # key 451 "KEY_DEL_LINE"
 
 
-key 464   ALT_RIGHT
+key 464   FUNCTION
 key 465   ESCAPE            FUNCTION
 key 466   F1                FUNCTION
 key 467   F2                FUNCTION
