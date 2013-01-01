@@ -299,3 +299,12 @@ key APOSTROPHE {
     alt:                                '/'
     shift+alt:                          '/'
 }
+
+key BUTTON_16 {
+    label:                              '?'
+    number:                             '\uEF01'
+    base:                               '\uEF01'
+    shift:                              '\uEF01'
+    alt:                                '\u263a'
+    shift+alt:                          '\uEF03'
+}
