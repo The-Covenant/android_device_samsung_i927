@@ -282,9 +282,9 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-	<item>15</item>
 	<item>150</item>
-	<item>1500</item>
+	<item>950</item>
+	<item>2500</item>
 	<item>15000</item>
     </integer-array>
 
@@ -293,10 +293,10 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-	<item>14</item>
+	<item>1</item>
+	<item>1</item>
 	<item>48</item>
-	<item>88</item>
-	<item>203</item>
+	<item>128</item>
 	<item>255</item>
     </integer-array>
 
@@ -305,11 +305,11 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>0</item>
+	<item>1</item>
+	<item>1</item>
+	<item>0</item>
+	<item>0</item>
+	<item>0</item>
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -317,15 +317,15 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-		<item>255</item>
-		<item>255</item>
-		<item>255</item>
-		<item>255</item>
-		<item>0</item>
+	<item>1</item>
+	<item>1</item>
+	<item>0</item>
+	<item>0</item>
+	<item>0</item>
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">10</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
          For this time after the screen turns on, the Power Manager
