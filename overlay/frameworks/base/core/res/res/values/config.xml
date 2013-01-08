@@ -400,17 +400,4 @@
          closed.  The default is 0. -->
     <integer name="config_lidKeyboardAccessibility">1</integer>
 
-    <!-- Array of output values for keyboard backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-                <item>255</item>
-		<item>255</item>
-		<item>255</item>
-		<item>255</item>
-		<item>0</item>
-    </integer-array>
-
 </resources>
