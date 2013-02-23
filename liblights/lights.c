@@ -1,22 +1,22 @@
 /*
-* Copyright (C) 2012 The Android Open Source Project
-* The CyanogenMod Project
-* Daniel Hillenbrand <codeworkx@cyanogenmod.com>
-* Tanguy Pruvot <tpruvot@github>
-* Adam77Root <Adam77Root@github>
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2012 The Android Open Source Project
+ *                    The CyanogenMod Project
+ *                    Daniel Hillenbrand <codeworkx@cyanogenmod.com>
+ *                    Tanguy Pruvot <tpruvot@github>
+ *                    Adam77Root <Adam77Root@github>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 
 #define LOG_TAG "lights"
@@ -39,8 +39,8 @@
 /******************************************************************************/
 
 /* LED NOTIFICATIONS BACKLIGHT */
-#define ENABLE_BL 1
-#define DISABLE_BL 0
+#define ENABLE_BL		1
+#define DISABLE_BL		0
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
@@ -112,7 +112,7 @@ static int set_light_buttons(struct light_device_t *dev,
     int brightness = rgb_to_brightness(state);
     /* Hack for stock Samsung roms */
     if(brightness != 0)
-brightness = 255;
+	brightness = 255;
 
     pthread_mutex_lock(&g_lock);
     ALOGV("%s(%d)", __FUNCTION__, brightness);
@@ -127,12 +127,12 @@ static int set_light_keyboard(struct light_device_t* dev,
 {
     int err = 0;
     int on = is_lit (state);
-
+ 
     pthread_mutex_lock(&g_lock);
     ALOGV("%s(%d)", __FUNCTION__, on);
     err = write_int(KEYBOARD_FILE, on ? 1 : 0);
     pthread_mutex_unlock(&g_lock);
-
+ 
     return err;
 }
 
@@ -153,15 +153,15 @@ static int set_light_leds_notifications(struct light_device_t *dev,
     int brightness = rgb_to_brightness(state);
         
     if (brightness+state->color == 0 || brightness > 100 ) {
-     pthread_mutex_lock(&g_lock);
+    	pthread_mutex_lock(&g_lock);
 
-     if (state->color & 0x00ffffff) {
-     ALOGV("[LED Notify] set_light_leds_notifications - ENABLE_BL\n");
-             err = write_int (NOTIFICATION_FILE_BLN, ENABLE_BL);
-     } else {
-     ALOGV("[LED Notify] set_light_leds_notifications - DISABLE_BL\n");
-     err = write_int (NOTIFICATION_FILE_BLN, DISABLE_BL);
-     }
+    	if (state->color & 0x00ffffff) {
+    		ALOGV("[LED Notify] set_light_leds_notifications - ENABLE_BL\n");
+            	err = write_int (NOTIFICATION_FILE_BLN, ENABLE_BL);
+    	} else {
+    		ALOGV("[LED Notify] set_light_leds_notifications - DISABLE_BL\n");
+    		err = write_int (NOTIFICATION_FILE_BLN, DISABLE_BL);
+    	}
         pthread_mutex_unlock(&g_lock);
     }
 
@@ -198,7 +198,6 @@ static int open_lights(const struct hw_module_t *module, char const *name,
         set_light = set_light_battery;
     else if (0 == strcmp(LIGHT_ID_KEYBOARD, name))
         set_light = set_light_keyboard;
-
     else
         return -EINVAL;
 
@@ -219,7 +218,7 @@ static int open_lights(const struct hw_module_t *module, char const *name,
 }
 
 static struct hw_module_methods_t lights_module_methods = {
-    .open = open_lights,
+    .open =  open_lights,
 };
 
 struct hw_module_t HAL_MODULE_INFO_SYM = {

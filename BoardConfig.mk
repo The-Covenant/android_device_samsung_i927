@@ -12,7 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# inherit from the proprietary version
+
 LOCAL_PATH := device/samsung/i927
+
+-include vendor/samsung/i927/BoardConfigVendor.mk
 
 # CPU
 TARGET_ARCH := arm
@@ -51,8 +55,9 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 #TARGET_KERNEL_SOURCE := kernel/samsung/i927
-#TARGET_KERNEL_CONFIG := covenant_bose_defconfig
+#TARGET_KERNEL_CONFIG := tegra_bose_defconfig
 TARGET_PREBUILT_KERNEL := device/samsung/i927/prebuilt/kernel
+TARGET_PREBUILT_RECOVERY := device/samsung/i927/prebuilt/recovery.img
 
 TARGET_NO_KERNEL := false
 TARGET_NO_RECOVERY := false
@@ -141,5 +146,11 @@ BOARD_UMS_LUNFILE := "/sys/devices/platform/fsl-tegra-udc/gadget/lun%d/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-# inherit from the proprietary version
--include vendor/samsung/i927/BoardConfigVendor.mk
+# TWRP
+DEVICE_RESOLUTION := 480x800
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_EXTERNAL_STORAGE_PATH := "/externalsd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "externalsd"
+TW_NO_REBOOT_BOOTLOADER := true
+TW_DEFAULT_EXTERNAL_STORAGE := true

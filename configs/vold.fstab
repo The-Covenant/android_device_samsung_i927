@@ -1,4 +1,4 @@
-## Vold 2.0 fstab for n1 - CM10 standard
+## Vold 2.0 Generic fstab
 
 #######################
 ## Regular device mount
@@ -11,11 +11,10 @@
 ######################
 
 # internal sdcard
-dev_mount emmc /mnt/emmc 4 /devices/platform/sdhci-tegra.3/mmc_host/mmc0/mmc0 nonremovable,encryptable
+dev_mount sdcard0 /storage/sdcard0 4 /devices/platform/sdhci-tegra.3/mmc_host/mmc0/mmc0 nonremovable,encryptable
 
 # external sdcard
-dev_mount sdcard /mnt/sdcard auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+dev_mount sdcard1 /storage/sdcard1 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
 
-# otg sdcard
-dev_mount usbdisk /mnt/usbdisk auto /devices/platform/tegra-ehci.0/usb
-#end line ## keep this line
+# USB storage device
+dev_mount usbdisk0 /storage/usbdisk0 auto /devices/platform/tegra-ehci.0/usb

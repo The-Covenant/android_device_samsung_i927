@@ -278,8 +278,8 @@ key SPACE {
     number:                             ' '
     base:                               ' '
     shift:                              ' '
-    alt:                                none
-    shift+alt:                          none
+    alt:                                ' '
+    shift+alt:                          ' '
 }
 
 key ENTER {
@@ -287,8 +287,8 @@ key ENTER {
     number:                             '\n'
     base:                               '\n'
     shift:                              '\n'
-    alt:                                none
-    shift+alt:                          none
+    alt:                                '\n'
+    shift+alt:                          '\n'
 }
 
 key APOSTROPHE {

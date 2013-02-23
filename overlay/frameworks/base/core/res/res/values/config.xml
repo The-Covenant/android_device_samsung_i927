@@ -169,7 +169,7 @@
     <!-- XXXXXX END OF RESOURCES USING WRONG NAMING CONVENTION -->
 
     <!-- The number of degrees to rotate the display when the keyboard is open. -->
-    <integer name="config_lidOpenRotation">-1</integer>
+    <integer name="config_lidOpenRotation">90</integer>
 
     <!-- The number of degrees to rotate the display when the device is in a desk dock.
          A value of -1 means no change in orientation by default. -->
@@ -235,13 +235,17 @@
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
     <integer-array name="config_safeModeDisabledVibePattern">
         <item>0</item>
-        <item>40</item>
+        <item>1</item>
+        <item>20</item>
+        <item>21</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
     <integer-array name="config_safeModeEnabledVibePattern">
         <item>0</item>
-        <item>40</item>
+        <item>1</item>
+        <item>20</item>
+        <item>21</item>
         <item>500</item>
         <item>600</item>
     </integer-array>
@@ -249,9 +253,9 @@
     <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
     <integer-array name="config_scrollBarrierVibePattern">
         <item>0</item>
-        <item>30</item>
-        <item>60</item>
-        <item>30</item>
+        <item>15</item>
+        <item>10</item>
+        <item>10</item>
     </integer-array>
 
     <bool name="config_use_strict_phone_number_comparation">false</bool>
