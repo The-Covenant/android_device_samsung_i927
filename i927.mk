@@ -11,9 +11,11 @@ PRODUCT_PACKAGES += \
     libOmxVidEnc \
     sec_touchscreen.kcm \
     dexpreopt \
+    com.android.future.usb.accessory \
     SamsungServiceMode \
     Camera \
     Torch \
+    FM \
     librs_jni
 
 # Charger
@@ -38,6 +40,9 @@ PRODUCT_PACKAGES += \
     audio.primary.n1 \
     audio_policy.n1 \
     audio.a2dp.default
+
+# Set true if you want .odex files
+DISABLE_DEXPREOPT := false
 
 # INIT-scripts
 PRODUCT_COPY_FILES += \
@@ -84,6 +89,10 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nvcamera.conf:system/etc/nvcamera.conf
+
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml
 
 # Shell and busybox
 PRODUCT_COPY_FILES += \
